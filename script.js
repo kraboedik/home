@@ -126,4 +126,3 @@ with (lib_text) {
     addEventListener("click", showSourceCodeButton);
     document.addEventListener("keyup", lib_text_enter_handle);
 }
-
