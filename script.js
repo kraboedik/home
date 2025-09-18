@@ -30,7 +30,7 @@ function updateAge(element) {
 	if (element === true) return age; // !!
 	
 	if (element) return (element.innerText = age);
-	bio_elem.innerHTML = `Russian ${uaflag.outerHTML} <span id="age">${age}</span> y.o.`;
+	bio_elem.innerHTML = `a Russian ${uaflag.outerHTML} <span id="age">${age}</span> y.o.`;
 	uaflag.remove()
 }
 try { updateAge(); } catch (e) { 
@@ -42,29 +42,7 @@ const age = document.querySelector("span#age"),
 	btns = document.querySelector(".buttons");
 
 let last, font_size = 2;
-onlyfans_btn.style.display = "";// show if js enabled
-onlyfans_btn.addEventListener("click", () => {
-	if (last) clearTimeout(last);
-	if (age) updateAge(age);
-	if (!age || age.innerText > 18) return window.open("https://media.tenor.com/iHAv4WoNo2kAAAAC/gotcha-bitch.gif");
-	scrollIntoView(age);
-	if (font_size < 8) return (age.style = `font-size: ${(font_size *= 4)}rem;`);
-	age.style.animation = "look 2s";
-	age.addEventListener(
-		"animationend",
-		() => {
-			age.style.animation = ""
-        },
-		{ once: true }
-	);
 
-	// revert to normal font size
-	last = setTimeout(() => {
-		font_size = 1;
-		age.style = "";
-		last = undefined;
-	}, 10 * 1000);
-});
 
 const tg_btn = document.querySelector("button#tg"),
 	tg_btns = document.querySelector("div.telegram-btns"),
@@ -79,7 +57,7 @@ tg_btns.style.display = ""; // show if js enabled
 
 
 tg_btn.addEventListener("click", (e) => {
-	if (!tg_btn_arrow.matches(":hover, :focus")) return window.open(`https://t.me/+Mxo2eu_XLoE5ZjEy`);
+	if (!tg_btn_arrow.matches(":hover, :focus")) return window.open(`https://t.me/endeavourOS320`);
 	absorbEvent(e);
 	if /* close the fold */ (tg_btns.getAttribute("closed") === "false") {
         tg_btn_arrow.style.transform = "rotate(0turn)";
@@ -148,3 +126,4 @@ with (lib_text) {
     addEventListener("click", showSourceCodeButton);
     document.addEventListener("keyup", lib_text_enter_handle);
 }
+
